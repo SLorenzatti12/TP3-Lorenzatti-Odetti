@@ -6,7 +6,8 @@ function App() {
 
   return (
     <>
-      <Loginpage></Loginpage>
+      <h1>Hola</h1>
+      
     </>
   )
 }
