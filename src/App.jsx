@@ -1,13 +1,12 @@
-import { useState } from 'react'
-import './components/Loginpage'
 import './App.css'
+import { Barrabusqueda } from './components/Barrabusqueda'
+import { Loginpage } from './components/Loginpage'
 
 function App() {
 
   return (
     <>
-      <h1>Hola</h1>
-      
+      <Loginpage></Loginpage>
     </>
   )
 }
