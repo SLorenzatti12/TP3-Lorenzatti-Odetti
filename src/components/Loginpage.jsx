@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 //incorporar css
-
-export function Loginpage () {
-  const [clientId, setClientId] = useState("")
-  const [clientSecret, setClientSecret] = useState("")
+const Loginpage = () => {
+  const [clientId, setClientId] = useState("");
+  const [clientSecret, setClientSecret] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault()
