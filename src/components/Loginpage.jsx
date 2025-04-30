@@ -14,8 +14,7 @@ const Loginpage = () => {
     }
     localStorage.setItem("client_id", clientId)
     localStorage.setItem("client_secret", clientSecret)
-    alert(clientId)
-    useNavegate("./Barrabusqueda")
+    navigate("/Barrabusqueda")
   }
 
   return (
