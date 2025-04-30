@@ -1,14 +1,18 @@
 import { useState } from 'react'
-import './components/Loginpage'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Loginpage from './components/Loginpage'
 import './App.css'
+import Barrabusqueda from './components/Barrabusqueda'
 
 function App() {
 
   return (
-    <>
-      <h1>Hola</h1>
-      
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Loginpage />}/>
+        <Route path="/Barrabusqueda" element={<Barrabusqueda />} />
+      </Routes>
+    </Router>
   )
 }
 

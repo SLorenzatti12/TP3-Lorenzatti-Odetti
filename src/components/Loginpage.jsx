@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 //incorporar css
 
-const Login = () => {
+const Loginpage = () => {
   const [clientId, setClientId] = useState("");
   const [clientSecret, setClientSecret] = useState("");
   const navigate = useNavigate();
@@ -40,4 +40,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Loginpage;
