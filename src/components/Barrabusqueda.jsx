@@ -78,7 +78,7 @@ const Barrabusqueda = () => {
             <div
               key={artist.id}
               className="artista-card"
-              onClick={() => navigate(`/artista/${artist.id}`)}
+              onClick={() => navigate('/DatosArtistas', { state: { id: artist.id } })}
             >
               {artist.images && artist.images[0] && (
                 <img src={artist.images[0].url} alt={artist.name} />
