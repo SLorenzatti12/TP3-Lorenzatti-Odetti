@@ -5,7 +5,7 @@ import Loginpage from './components/Loginpage'
 import './App.css'
 import Barrabusqueda from './components/Barrabusqueda'
 import { DatosArtista } from './components/DatosArtista'
-// import { DatosAlbum } from './components/DatosAlbum'
+ import { DatosAlbum } from './components/DatosAlbum'
 
 function App() {
 
@@ -15,7 +15,7 @@ function App() {
         <Route path="/" element={<Loginpage />}/>
         <Route path="/Barrabusqueda" element={<Barrabusqueda />} />
         <Route path='/DatosArtistas' element={<DatosArtista />}/>
-        {/*<Route path='/DatosAlbum' element={<DatosAlbum />}/>*/}
+        <Route path='/DatosAlbum' element={<DatosAlbum />}/>
       </Routes>
     </Router>
   )
