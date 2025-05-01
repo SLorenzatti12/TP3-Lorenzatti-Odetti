@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+import '../styles/DatosArtista.css'
 
 export function DatosArtista() {
   const location = useLocation();
@@ -75,10 +76,9 @@ export function DatosArtista() {
     <>
       <div className="datos-artista">
         {artistData.images && artistData.images[0] && (
-          <img src={artistData.images[0].url} alt={artistData.name} />
+          <img src={artistData.images[0].url} alt={artistData.name} id="img-artista"/>
         )}
         <h1>{artistData.name}</h1>
-        <p>ID: {artistData.id}</p>
       </div>
 
       <section>
