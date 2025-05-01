@@ -96,7 +96,8 @@ export function DatosArtista() {
               {album.images && album.images[0] && (
                 <img src={album.images[0].url} alt={album.name} />
               )}
-              <p>{album.name}</p>
+              <p><strong>{album.name}</strong></p>
+              <p>Año: {album.release_date.slice(0, 4)}</p>
             </Link>
           ))}
         </div>
