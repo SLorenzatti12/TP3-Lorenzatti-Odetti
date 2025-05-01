@@ -1,0 +1,40 @@
+.cans-fav   {
+    background-color: #121212;
+    color: #f5f5f5;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 800px;
+    margin: 2rem auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.canciones-lista li {
+    font-size: 0.95rem;
+    padding: 0.6rem 0.9rem;
+  }
+  
+  .canciones-lista li {
+    background-color: #1e1e1e;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .canciones-lista li:hover {
+    background-color: #2a2a2a;
+  }
+
+  .cancion-link .cancion-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+  
+  .cancion-img {
+    width: 10% !important;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 5px;
+  }

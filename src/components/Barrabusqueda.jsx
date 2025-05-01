@@ -104,6 +104,11 @@ const Barrabusqueda = () => {
         )}
       </ul>
 
+      <div className="canciones_fav">
+        <h3>Ver canciones favoritas</h3>
+        <button onClick={()=>navigate('/CancionesFavoritas')}>Ir</button>
+      </div>
+
       <div className="busqueda-container">
         <h2>Buscar Artistas</h2>
         <form onSubmit={handleSearch}>
