@@ -5,7 +5,11 @@ import Loginpage from './components/Loginpage'
 import './App.css'
 import Barrabusqueda from './components/Barrabusqueda'
 import { DatosArtista } from './components/DatosArtista'
+<<<<<<< HEAD
  import { DatosAlbum } from './components/DatosAlbum'
+=======
+import  DatosAlbum  from './components/DatosAlbum'
+>>>>>>> origin/main
 
 function App() {
 
@@ -15,7 +19,7 @@ function App() {
         <Route path="/" element={<Loginpage />}/>
         <Route path="/Barrabusqueda" element={<Barrabusqueda />} />
         <Route path='/DatosArtistas' element={<DatosArtista />}/>
-        <Route path='/DatosAlbum' element={<DatosAlbum />}/>
+        <Route path='/album/:id' element={<DatosAlbum />}/>
       </Routes>
     </Router>
   )
