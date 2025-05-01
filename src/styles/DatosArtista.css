@@ -1,3 +1,29 @@
+.datos-artista  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  color: #f5f5f5;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.buttons-container  {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.boton_fav:focus {
+    border-radius: 50%;
+    outline: none;
+}
+
 section {
     display: flex;
     flex-direction: column;
@@ -5,7 +31,6 @@ section {
     justify-content: center;
   }
   
-  /* Imagen del artista */
   #img-artista {
     width: 25%;
     border-radius: 100%;
@@ -13,16 +38,14 @@ section {
     object-fit: cover;
   }
   
-  /* Grid de álbumes adaptativa */
   .albumes-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     margin-top: 1rem;
-    width: 75%; /* más flexible en lugar de 60% */
+    width: 75%; 
   }
   
-  /* Tarjeta de álbum */
   .album-card {
     background-color: transparent;
     border: 1px solid #ccc;
@@ -33,12 +56,10 @@ section {
     flex-direction: column;
   }
   
-  /* Efecto hover */
   .album-card:hover {
     transform: scale(1.03);
   }
   
-  /* Imagen del álbum */
   .album-card img {
     width: 100%;
     height: auto;
@@ -46,10 +67,20 @@ section {
     object-fit: cover;
   }
   
-  /* Texto del álbum responsivo */
   .album-card p {
     margin-top: 0.5rem;
     font-size: clamp(0.8rem, 2.5vw, 1.1rem);
     word-break: break-word;
   }
   
+  @media  (max-width: 600px)  {
+    #img-artista  {
+      width: 50%;
+    }
+    .volver-btn {
+      max-width: 35% !important;
+    }
+    .albumes-grid {
+      width: 100%;
+    }
+  }

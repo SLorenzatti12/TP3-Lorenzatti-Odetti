@@ -127,3 +127,14 @@
       padding: 0.6rem 0.9rem;
     }
   }
+
+
+.boton_fav  {
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+  }
+
+.boton_fav:focus {
+
+      outline: none;
+  }
