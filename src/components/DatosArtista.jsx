@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import '../styles/DatosArtista.css'
-import { Link } from "react-router-dom";
 
 export function DatosArtista() {
 

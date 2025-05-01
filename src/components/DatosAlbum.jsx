@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../styles/DatosAlbum.css";
+{/*import './DatosAlbum.css';*/}
 
 const DatosAlbum = () => {
   const { id } = useParams(); // ID del álbum desde la URL
