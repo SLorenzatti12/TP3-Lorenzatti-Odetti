@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 import '../styles/DatosArtista.css'
+import { Link } from "react-router-dom";
 
 export function DatosArtista() {
   const location = useLocation();
@@ -31,7 +32,10 @@ export function DatosArtista() {
           "Content-Type": "application/x-www-form-urlencoded",
         },
       })
-      .then((res) => setToken(res.data.access_token))
+      .then((res) => {
+        setToken(res.data.access_token); 
+        localStorage.setItem("access_token", res.data.access_token);
+      })
       .catch((err) => console.error("Error al obtener token:", err));
   }, []);
 
@@ -85,15 +89,15 @@ export function DatosArtista() {
         <h2>Álbumes</h2>
         {albums.length > 0 ? (
           <div className="albumes-grid">
-            {albums.map((album) => (
-              <div key={album.id} className="album-card">
-                {album.images && album.images[0] && (
-                  <img src={album.images[0].url} alt={album.name} />
-                )}
-                <p>{album.name}</p>
-              </div>
-            ))}
-          </div>
+          {albums.map((album) => (
+            <Link key={album.id} to={`/album/${album.id}`} className="album-card">
+              {album.images && album.images[0] && (
+                <img src={album.images[0].url} alt={album.name} />
+              )}
+              <p>{album.name}</p>
+            </Link>
+          ))}
+        </div>
         ) : (
           <p>No se encontraron álbumes.</p>
         )}
