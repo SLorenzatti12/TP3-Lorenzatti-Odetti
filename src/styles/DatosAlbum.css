@@ -127,3 +127,10 @@
       padding: 0.6rem 0.9rem;
     }
   }
+
+  .estrella-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.5rem;
+  }
