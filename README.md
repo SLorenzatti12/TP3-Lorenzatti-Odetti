@@ -1,12 +1,34 @@
-# React + Vite
+# 🎧 Spotify Artist Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con React que permite buscar artistas utilizando la API de Spotify, visualizar resultados y guardar artistas favoritos localmente.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Funcionalidades
 
-## Expanding the ESLint configuration
+- 🔍 Buscar artistas por nombre.
+- ⭐ Guardar y visualizar una lista de artistas favoritos.
+- 📱 Diseño responsivo, con tema oscuro y moderno.
+- 💾 Persistencia local de favoritos usando `localStorage`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠 Tecnologías usadas
+
+- React
+- Axios
+- React Router DOM
+- Spotify Web API
+- CSS (estilo personalizado sin frameworks)
+
+---
+## 🔑 Requisitos previos
+
+Para usar la app necesitás crear una cuenta de desarrollador en [Spotify for Developers](https://developer.spotify.com/dashboard) y generar tus credenciales:
+
+- Client ID: 047bf3b1cc894671a03a62f7657c6130
+- Client Secret: d5b3d409d7624404960ac4ce906f9901
+
+Luego, al ingresar a la app, estos datos se te solicitarán y se guardarán localmente.
+
+---
