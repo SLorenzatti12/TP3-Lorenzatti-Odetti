@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 import '../styles/DatosArtista.css'
 
@@ -12,6 +12,13 @@ export function DatosArtista() {
   const [token, setToken] = useState("");
   const [artistData, setArtistData] = useState(null);
   const [albums, setAlbums] = useState([]);
+  const [esFavorito, setEsFavorito] = useState(false);
+
+  useEffect(() => {
+    const favoritos = JSON.parse(localStorage.getItem("favoritos_artistas")) || [];
+    const existe = favoritos.some((artista) => artista.id === id);
+    setEsFavorito(existe);
+}, [id]);
 
   // Obtener token de acceso desde client_id y client_secret
   useEffect(() => {
@@ -73,6 +80,27 @@ export function DatosArtista() {
       .catch((err) => console.error("Error al obtener álbumes:", err));
   }, [id, token]);
 
+  const handleToggleFavorito = () => {
+    const favoritos = JSON.parse(localStorage.getItem("favoritos_artistas")) || [];
+    const yaExiste = favoritos.some((artista) => artista.id === artistData.id);
+  
+    if (yaExiste) {
+      const nuevosFavoritos = favoritos.filter((artista) => artista.id !== artistData.id);
+      localStorage.setItem("favoritos_artistas", JSON.stringify(nuevosFavoritos));
+      setEsFavorito(false);
+      alert("Artista eliminado de favoritos.");
+    } else {
+      const nuevoFavorito = {
+        id: artistData.id,
+        name: artistData.name,
+        image: artistData.images?.[0]?.url || "",
+      };
+      localStorage.setItem("favoritos_artistas", JSON.stringify([...favoritos, nuevoFavorito]));
+      setEsFavorito(true);
+      alert("Artista añadido a favoritos.");
+    }
+  };
+
   if (!artistData) {
     return <p>Cargando datos del artista...</p>;
   }
@@ -80,11 +108,19 @@ export function DatosArtista() {
   return (
     <>
       <div className="datos-artista">
-        {artistData.images && artistData.images[0] && (
-          <img src={artistData.images[0].url} alt={artistData.name} id="img-artista"/>
-        )}
-        <h1>{artistData.name}</h1>
-      </div>
+        <div className="imagen-con-botones">
+          <button className="search-btn" onClick={() => navigate(-1)}>
+            ← Volver
+          </button>
+          {artistData.images && artistData.images[0] && (
+            <img src={artistData.images[0].url} alt={artistData.name} id="img-artista"/>
+          )}
+          <button className="search-btn" onClick={handleToggleFavorito}>
+            {esFavorito ? "Quitar de Favoritos" : "Añadir a Favoritos"}
+          </button>
+        </div>
+      <h1>{artistData.name}</h1>
+    </div>
 
       <section>
         <h2>Álbumes</h2>
@@ -107,3 +143,5 @@ export function DatosArtista() {
     </>
   );
 }
+
+export default DatosArtista;

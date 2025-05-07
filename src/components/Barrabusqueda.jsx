@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import './Barrabusqueda.css'
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Barrabusqueda = () => {
   const [token, setToken] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [artists, setArtists] = useState([]);
   const navigate = useNavigate();
+
+  const [favoritos, setFavoritos] = useState([]);
+
+  useEffect(() => {
+    const favoritosGuardados = JSON.parse(localStorage.getItem("favoritos_artistas")) || [];
+    setFavoritos(favoritosGuardados);
+  }, []);
+ 
 
   useEffect(() => {
     const clientId = localStorage.getItem("client_id");
@@ -71,6 +79,20 @@ const Barrabusqueda = () => {
         />
         <button type="submit">Buscar</button>
       </form>
+
+      {favoritos.length > 0 && artists.length === 0 && (
+        <section className="favoritos">
+          <h2>Favoritos</h2>
+          <div className="favoritos-grid">
+            {favoritos.map((artista) => (
+              <Link to={`/datos-artista`} state={{ id: artista.id }} key={artista.id} className="favorito-card">
+                <img src={artista.image} alt={artista.name} />
+                <p>{artista.name}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       <div className="resultados-artistas">
         {artists && artists.length > 0 ? (
