@@ -70,3 +70,82 @@
     border-radius: 50%;
     margin-bottom: 0.5rem;
   }
+  
+  .favoritos-container {
+    margin-top: 2rem;
+    border-top: 1px solid #444;
+    padding-top: 1rem;
+  }
+  
+  .favoritos-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .artista-card .buscar-btn {
+    margin-top: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    background-color: #1db954;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .favoritos {
+    margin-top: 2rem;
+    text-align: center;
+    background-color: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .favoritos h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #1db954;
+  }
+
+  .favoritos-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .favorito-card {
+    flex: 0 0 auto;
+    width: 120px;
+    scroll-snap-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #222;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    text-align: center;
+  }
+
+.favorito-card:hover {
+  transform: scale(1.05);
+  background-color: #333;
+}
+
+.favorito-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.favorito-card p {
+  font-size: 0.95rem;
+  margin: 0;
+}
