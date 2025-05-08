@@ -65,8 +65,10 @@ const DatosAlbum = () => {
       <ul className="canciones-lista">
         {album.tracks.items.map((track) => (
           <li key={track.id} className="cancion-item">
-            <img src={album.images[0]?.url} alt="Portada" className="cancion-img" />
-            <span>{track.track_number}. {track.name}</span>
+            <div className="datacancion">
+              <img src={album.images[0]?.url} alt="Portada" className="cancion-img" />
+              <span>{track.track_number}. {track.name}</span>
+            </div>
             {track.preview_url && (
               <audio controls src={track.preview_url} className="preview-audio">
                 Tu navegador no soporta el elemento de audio.
@@ -80,6 +82,7 @@ const DatosAlbum = () => {
                   name: track.name,
                   artist: album.artists[0].name,
                   image: album.images[0]?.url,
+                  albumId: album.id
                 })
               }
             >

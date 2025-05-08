@@ -10,10 +10,15 @@ const Barrabusqueda = () => {
   const navigate = useNavigate();
 
   const [favoritos, setFavoritos] = useState([]);
+  const [cancionesFavoritas, setCancionesFavoritas] = useState([]);
 
   useEffect(() => {
     const favoritosGuardados = JSON.parse(localStorage.getItem("favoritos_artistas")) || [];
     setFavoritos(favoritosGuardados);
+
+    const cancionesGuardadas = JSON.parse(localStorage.getItem("favoritos_canciones")) || [];
+    setCancionesFavoritas(cancionesGuardadas);
+
   }, []);
  
 
@@ -85,10 +90,27 @@ const Barrabusqueda = () => {
           <h2>Favoritos</h2>
           <div className="favoritos-grid">
             {favoritos.map((artista) => (
-              <Link to={`/datos-artista`} state={{ id: artista.id }} key={artista.id} className="favorito-card">
+              <Link to={`/DatosArtistas`} state={{ id: artista.id }} key={artista.id} className="favorito-card">
                 <img src={artista.image} alt={artista.name} />
                 <p>{artista.name}</p>
               </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {cancionesFavoritas.length > 0 && artists.length === 0 && (
+        <section className="favoritos">
+          <h2>Canciones Favoritas</h2>
+          <div className="favoritos-grid">
+            {cancionesFavoritas.map((cancion) => (
+              <div key={cancion.id} className="favorito-card cancion">
+                <Link to={`/album/${cancion.albumId}`}>
+                  <img src={cancion.image} alt={cancion.name} />
+                  <p>{cancion.name}</p>
+                  <small>{cancion.artist}</small>
+                </Link>
+              </div>
             ))}
           </div>
         </section>
