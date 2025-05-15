@@ -31,6 +31,6 @@ Para usar la app necesitás las siguietes credenciales:
 
 Luego, al ingresar a la app, estos datos se te solicitarán y se guardarán localmente.
 
-[Buscador de Artistas]([(https://buscadordeartistas.netlify.app)])
+Link a la app: https://buscadordeartistas.netlify.app
 
 ---
