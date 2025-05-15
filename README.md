@@ -24,11 +24,13 @@ Aplicación web desarrollada con React que permite buscar artistas utilizando la
 ---
 ## 🔑 Requisitos previos
 
-Para usar la app necesitás crear una cuenta de desarrollador en [Spotify for Developers](https://developer.spotify.com/dashboard) y generar tus credenciales:
+Para usar la app necesitás las siguietes credenciales: 
 
 - Client ID: 047bf3b1cc894671a03a62f7657c6130
 - Client Secret: d5b3d409d7624404960ac4ce906f9901
 
 Luego, al ingresar a la app, estos datos se te solicitarán y se guardarán localmente.
+
+[Buscador de Artistas]((https://buscadordeartistas.netlify.app))
 
 ---
